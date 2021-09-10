@@ -8,6 +8,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"net/http"
 )
 
@@ -31,5 +32,6 @@ func main() {
 		writer.Write([]byte(a))
 	})
 
+	fmt.Println(*tag, "serve:", *addr)
 	http.ListenAndServe(*addr, nil)
 }

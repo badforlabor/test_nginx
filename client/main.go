@@ -33,15 +33,17 @@ func req(action string) {
 			fmt.Println(action, " resp, err=", resp.StatusCode)
 		}
 	} else {
-		fmt.Println(action, " req failed")
+		fmt.Println(url, " req failed")
 	}
 }
 
 func main() {
+	flag.Parse()
+
 	var wg = sync.WaitGroup{}
 
 	var echoAction = func(s string) {
-		req("/api/" + s + "/echo?msg=" + s)
+		req("api/" + s + "/echo?msg=" + s)
 		wg.Done()
 	}
 
