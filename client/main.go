@@ -33,7 +33,7 @@ func req(action string) {
 			fmt.Println(action, " resp, err=", resp.StatusCode)
 		}
 	} else {
-		fmt.Println(url, " req failed")
+		fmt.Println(url, " req failed, e=", e.Error())
 	}
 }
 
@@ -52,10 +52,11 @@ func main() {
 		cnt++
 		fmt.Println("---------- " + strconv.Itoa(cnt)  + " ----------")
 
-		wg.Add(3)
+		wg.Add(4)
 		echoAction("s1")
 		echoAction("s2")
 		echoAction("s3")
+		echoAction("s4")
 		wg.Wait()
 
 		time.Sleep(time.Second * 2)

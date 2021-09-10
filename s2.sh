@@ -1,0 +1,1 @@
+./server.exe -addr=:20212 -tag=s2
