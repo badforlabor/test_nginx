@@ -52,11 +52,12 @@ func main() {
 		cnt++
 		fmt.Println("---------- " + strconv.Itoa(cnt)  + " ----------")
 
-		wg.Add(4)
+		wg.Add(5)
 		echoAction("s1")
 		echoAction("s2")
 		echoAction("s3")
 		echoAction("s4")
+		echoAction("s5/s6/s7")
 		wg.Wait()
 
 		time.Sleep(time.Second * 2)
